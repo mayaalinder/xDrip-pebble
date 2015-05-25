@@ -2361,7 +2361,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(rig_battlevel_layer));
   
   // INVERTER BATTERY LAYER
-  inv_rig_battlevel_layer = inverter_layer_create(GRect(112, 66, 30, 15));
+  inv_rig_battlevel_layer = inverter_layer_create(GRect(0, 0, 0, 0));
   layer_add_child(window_get_root_layer(window_cgm), inverter_layer_get_layer(inv_rig_battlevel_layer));
   
   // BG
