@@ -2331,7 +2331,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(tophalf_layer));
   
   // HAPPY MSG LAYER
-  happymsg_layer = text_layer_create(GRect(-10, 50, 144, 55));
+  happymsg_layer = text_layer_create(GRect(-10, 33, 144, 55));
   text_layer_set_text_color(happymsg_layer, GColorBlack);
   text_layer_set_background_color(happymsg_layer, GColorClear);
   text_layer_set_font(happymsg_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2339,10 +2339,10 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(happymsg_layer));
   
   // DELTA BG / MESSAGE LAYER
-  message_layer = text_layer_create(GRect(0, 50, 144, 55));
+  message_layer = text_layer_create(GRect(0, 33, 144, 55));
   text_layer_set_text_color(message_layer, GColorBlack);
   text_layer_set_background_color(message_layer, GColorClear);
-  text_layer_set_font(message_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  text_layer_set_font(message_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
   text_layer_set_text_alignment(message_layer, GTextAlignmentCenter);
   layer_add_child(window_layer_cgm, text_layer_get_layer(message_layer));
   
@@ -2403,7 +2403,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, bitmap_layer_get_layer(perfectbg_layer));
   
   // CGM TIME AGO ICON
-  cgmicon_layer = bitmap_layer_create(GRect(2, 80, 40, 22));
+  cgmicon_layer = bitmap_layer_create(GRect(2, 80, 40, 19));
   bitmap_layer_set_alignment(cgmicon_layer, GAlignLeft);
   bitmap_layer_set_background_color(cgmicon_layer, GColorWhite);
   layer_add_child(window_layer_cgm, bitmap_layer_get_layer(cgmicon_layer));  
