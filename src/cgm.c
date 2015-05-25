@@ -2323,7 +2323,7 @@ void window_load_cgm(Window *window_cgm) {
   window_layer_cgm = window_get_root_layer(window_cgm);
   
   // TOPHALF WHITE
-  tophalf_layer = text_layer_create(GRect(0, 0, 144, 83));
+  tophalf_layer = text_layer_create(GRect(0, 0, 144, 106));
   text_layer_set_text_color(tophalf_layer, GColorBlack);
   text_layer_set_background_color(tophalf_layer, GColorWhite);
   text_layer_set_font(tophalf_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
@@ -2331,7 +2331,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(tophalf_layer));
   
   // HAPPY MSG LAYER
-  happymsg_layer = text_layer_create(GRect(-10, 33, 144, 55));
+  happymsg_layer = text_layer_create(GRect(-10, 50, 144, 55));
   text_layer_set_text_color(happymsg_layer, GColorBlack);
   text_layer_set_background_color(happymsg_layer, GColorClear);
   text_layer_set_font(happymsg_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2339,10 +2339,10 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(happymsg_layer));
   
   // DELTA BG / MESSAGE LAYER
-  message_layer = text_layer_create(GRect(0, 33, 144, 55));
+  message_layer = text_layer_create(GRect(0, 50, 144, 55));
   text_layer_set_text_color(message_layer, GColorBlack);
   text_layer_set_background_color(message_layer, GColorClear);
-  text_layer_set_font(message_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_font(message_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
   text_layer_set_text_alignment(message_layer, GTextAlignmentCenter);
   layer_add_child(window_layer_cgm, text_layer_get_layer(message_layer));
   
@@ -2353,15 +2353,15 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, bitmap_layer_get_layer(icon_layer)); 
 
   // RIG BATTERY LEVEL
-  rig_battlevel_layer = text_layer_create(GRect(70, 61, 72, 22));
+  rig_battlevel_layer = text_layer_create(GRect(70, 78, 72, 26));
   text_layer_set_text_color(rig_battlevel_layer, GColorBlack);
   text_layer_set_background_color(rig_battlevel_layer, GColorClear);
-  text_layer_set_font(rig_battlevel_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+  text_layer_set_font(rig_battlevel_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_alignment(rig_battlevel_layer, GTextAlignmentRight);
   layer_add_child(window_layer_cgm, text_layer_get_layer(rig_battlevel_layer));
   
   // INVERTER BATTERY LAYER
-  inv_rig_battlevel_layer = inverter_layer_create(GRect(0, 0, 0, 0));
+  inv_rig_battlevel_layer = inverter_layer_create(GRect(-1, -1, 0, 0));
   layer_add_child(window_get_root_layer(window_cgm), inverter_layer_get_layer(inv_rig_battlevel_layer));
   
   // BG
@@ -2373,7 +2373,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(bg_layer));
 
   // CALCULATED RAW INSTEAD OF BG - LAST VALUE (1)
-  calcraw_last1_layer = text_layer_create(GRect(0, -7, 40, 25));
+  calcraw_last1_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(calcraw_last1_layer, GColorBlack);
   text_layer_set_background_color(calcraw_last1_layer, GColorClear);
   text_layer_set_font(calcraw_last1_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2381,7 +2381,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(calcraw_last1_layer));
   
   // CALCULATED RAW INSTEAD OF BG - 2ND LAST VALUE (2)
-  calcraw_last2_layer = text_layer_create(GRect(32, 3, 40, 25));
+  calcraw_last2_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(calcraw_last2_layer, GColorBlack);
   text_layer_set_background_color(calcraw_last2_layer, GColorClear);
   text_layer_set_font(calcraw_last2_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2389,7 +2389,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(calcraw_last2_layer)); 
   
   // CALCULATED RAW INSTEAD OF BG - 3RD LAST VALUE (3)
-  calcraw_last3_layer = text_layer_create(GRect(63, 16, 40, 25));
+  calcraw_last3_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(calcraw_last3_layer, GColorBlack);
   text_layer_set_background_color(calcraw_last3_layer, GColorClear);
   text_layer_set_font(calcraw_last3_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2403,21 +2403,21 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, bitmap_layer_get_layer(perfectbg_layer));
   
   // CGM TIME AGO ICON
-  cgmicon_layer = bitmap_layer_create(GRect(2, 63, 40, 19));
+  cgmicon_layer = bitmap_layer_create(GRect(2, 80, 40, 22));
   bitmap_layer_set_alignment(cgmicon_layer, GAlignLeft);
   bitmap_layer_set_background_color(cgmicon_layer, GColorWhite);
   layer_add_child(window_layer_cgm, bitmap_layer_get_layer(cgmicon_layer));  
   
   // CGM TIME AGO READING
-  cgmtime_layer = text_layer_create(GRect(26, 56, 40, 24));
+  cgmtime_layer = text_layer_create(GRect(26, 73, 40, 30));
   text_layer_set_text_color(cgmtime_layer, GColorBlack);
   text_layer_set_background_color(cgmtime_layer, GColorClear);
-  text_layer_set_font(cgmtime_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
+  text_layer_set_font(cgmtime_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
   text_layer_set_text_alignment(cgmtime_layer, GTextAlignmentLeft);
   layer_add_child(window_layer_cgm, text_layer_get_layer(cgmtime_layer));
 
   // T1D NAME
-  t1dname_layer = text_layer_create(GRect(2, 140, 69, 28));
+  t1dname_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(t1dname_layer, GColorWhite);
   text_layer_set_background_color(t1dname_layer, GColorClear);
   text_layer_set_font(t1dname_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2434,24 +2434,24 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(watch_battlevel_layer));
 
   // TIME; CURRENT ACTUAL TIME FROM WATCH
-  time_watch_layer = text_layer_create(GRect(0, 102, 144, 44));
+  time_watch_layer = text_layer_create(GRect(0, 108, 144, 34));
   text_layer_set_text_color(time_watch_layer, GColorWhite);
   text_layer_set_background_color(time_watch_layer, GColorClear);
-  text_layer_set_font(time_watch_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  text_layer_set_font(time_watch_layer, fonts_get_system_font(FONT_KEY_BITHAM_30_BLACK));
   text_layer_set_text_alignment(time_watch_layer, GTextAlignmentCenter);
   layer_add_child(window_layer_cgm, text_layer_get_layer(time_watch_layer));
   
   // DATE
-  date_app_layer = text_layer_create(GRect(39, 80, 72, 28));
+  date_app_layer = text_layer_create(GRect(2, 144, 69, 22));
   text_layer_set_text_color(date_app_layer, GColorWhite);
   text_layer_set_background_color(date_app_layer, GColorClear);
-  text_layer_set_font(date_app_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
+  text_layer_set_font(date_app_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
   text_layer_set_text_alignment(date_app_layer, GTextAlignmentCenter);
   draw_date_from_app();
   layer_add_child(window_layer_cgm, text_layer_get_layer(date_app_layer));
   
   // RAW CALCULATED
-  raw_calc_layer = text_layer_create(GRect(1, 76, 40, 25));
+  raw_calc_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(raw_calc_layer, GColorWhite);
   text_layer_set_background_color(raw_calc_layer, GColorClear);
   text_layer_set_font(raw_calc_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2459,7 +2459,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(raw_calc_layer));
   
   // NOISE
-  noise_layer = text_layer_create(GRect(85, 76, 58, 27));
+  noise_layer = text_layer_create(GRect(-1, -1, 0, 0));
   text_layer_set_text_color(noise_layer, GColorWhite);
   text_layer_set_background_color(noise_layer, GColorClear);
   text_layer_set_font(noise_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
@@ -2467,7 +2467,7 @@ void window_load_cgm(Window *window_cgm) {
   layer_add_child(window_layer_cgm, text_layer_get_layer(noise_layer));
   
   // RAW UNFILT
-  raw_unfilt_layer = text_layer_create(GRect(1, 92, 40, 25)); 
+  raw_unfilt_layer = text_layer_create(GRect(-1, -1, 0, 0)); 
   text_layer_set_text_color(raw_unfilt_layer, GColorWhite);
   text_layer_set_background_color(raw_unfilt_layer, GColorClear);
   text_layer_set_font(raw_unfilt_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
